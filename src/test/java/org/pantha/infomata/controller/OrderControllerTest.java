@@ -6,13 +6,6 @@ import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.pantha.infomata.CustomerInfomataApplication;
-import org.pantha.infomata.exception.CustomerException;
-import org.pantha.infomata.exception.OrderException;
-import org.pantha.infomata.model.Customer;
-import org.pantha.infomata.model.Order;
-import org.pantha.infomata.service.CustomerService;
-import org.pantha.infomata.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.IntegrationTest;
@@ -22,6 +15,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.jayway.restassured.RestAssured;
+import com.xebia.spring4_XTR.CustomerInfomataApplication;
+import com.xebia.spring4_XTR.exception.CustomerException;
+import com.xebia.spring4_XTR.exception.OrderException;
+import com.xebia.spring4_XTR.model.Customer;
+import com.xebia.spring4_XTR.model.Order;
+import com.xebia.spring4_XTR.service.CustomerService;
+import com.xebia.spring4_XTR.service.OrderService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = CustomerInfomataApplication.class)

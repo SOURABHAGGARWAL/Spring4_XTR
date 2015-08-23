@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.pantha.infomata.controller.CustomerControllerTest
--------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.524 sec - in org.pantha.infomata.controller.CustomerControllerTest

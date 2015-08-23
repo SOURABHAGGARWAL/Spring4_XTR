@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.pantha</groupId>
-	<artifactId>customer_infomata</artifactId>
+	<groupId>com.xebia.spring4_XTR</groupId>
+	<artifactId>spring4_XTR</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>customer_infomata</name>
-	<description>Customer Infomata For getting Customer and Order Data</description>
+	<name>spring4_xtr</name>
+	<description>Spring 4 complete training for all</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

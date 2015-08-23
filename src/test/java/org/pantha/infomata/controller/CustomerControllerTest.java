@@ -8,11 +8,6 @@ import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.pantha.infomata.CustomerInfomataApplication;
-import org.pantha.infomata.exception.CustomerException;
-import org.pantha.infomata.model.Customer;
-import org.pantha.infomata.model.Order;
-import org.pantha.infomata.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.IntegrationTest;
@@ -23,6 +18,11 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
+import com.xebia.spring4_XTR.CustomerInfomataApplication;
+import com.xebia.spring4_XTR.exception.CustomerException;
+import com.xebia.spring4_XTR.model.Customer;
+import com.xebia.spring4_XTR.model.Order;
+import com.xebia.spring4_XTR.service.CustomerService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = CustomerInfomataApplication.class)
@@ -59,7 +59,7 @@ public class CustomerControllerTest extends RestAssured {
     public void getCustomerTest() {
         String customerId = customer.getCustomerId();
         
-        when().get("/api/customer?customerId={customerId}", customerId).
+        when().get("/api/webrestcontrollerannotation?customerId={customerId}", customerId).
 		then().
 		statusCode(HttpStatus.OK.value()).
 		body("firstName", Matchers.is("firstName")).
@@ -69,7 +69,7 @@ public class CustomerControllerTest extends RestAssured {
 	@Test
     public void deleteCustomerTest() {
         String customerId = customer.getCustomerId();
-        when().delete("/api/customer?customerId={customerId}", customerId).then().statusCode(HttpStatus.OK.value());
+        when().delete("/api/webrestcontrollerannotation?customerId={customerId}", customerId).then().statusCode(HttpStatus.OK.value());
     }
 	
 	@Test
@@ -80,7 +80,7 @@ public class CustomerControllerTest extends RestAssured {
 		  String customerId = customer.getCustomerId();
 		  
 		  given().body(updateCustomer).contentType(ContentType.JSON)
-		  .when().put("/api/customer?customerId={customerId}", customerId)
+		  .when().put("/api/webrestcontrollerannotation?customerId={customerId}", customerId)
 		  .then().statusCode(HttpStatus.OK.value())
 		  .body("firstName", Matchers.is("updatedFirstName"))
 		  .body("lastName", Matchers.is("lastName"));
@@ -89,13 +89,13 @@ public class CustomerControllerTest extends RestAssured {
 	@Test
 	public void updateCustomerWithoutBodyTest() {
 		String customerId = customer.getCustomerId();
-		when().put("/api/customer?customerId={customerId}", customerId).then().statusCode(HttpStatus.BAD_REQUEST.value());
+		when().put("/api/webrestcontrollerannotation?customerId={customerId}", customerId).then().statusCode(HttpStatus.BAD_REQUEST.value());
 	}
 	
 	@Test
 	public void saveCustomerTest() {
 		  given().body(customer).contentType(ContentType.JSON)
-		  .when().post("/api/customer")
+		  .when().post("/api/webrestcontrollerannotation")
 		  .then().statusCode(HttpStatus.OK.value())
 		  .body("customerId", Matchers.is(mockedCustomerId))
 		  .body("firstName", Matchers.is("firstName"))
@@ -108,7 +108,7 @@ public class CustomerControllerTest extends RestAssured {
 		List<Order> orders = new ArrayList<Order>();
 		orders.add(null);
 		String customerId = customer.getCustomerId();
-        when().get("/api/customer/orders?customerId={customerId}", customerId).
+        when().get("/api/webrestcontrollerannotation/orders?customerId={customerId}", customerId).
 		then().
 		statusCode(HttpStatus.OK.value()).
 		body("orders", Matchers.is(orders));
