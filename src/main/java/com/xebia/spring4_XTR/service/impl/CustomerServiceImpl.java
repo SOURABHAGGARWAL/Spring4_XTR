@@ -73,5 +73,10 @@ public class CustomerServiceImpl implements CustomerService{
 	public Optional<Customer> findByCustomerID(String customerId) {
 		return customerBusiness.findByCustomerID(customerId);
 	}
+
+	@Override
+	public List<Customer> findByCustomerName(String firstName) {
+		return customerBusiness.findByCustomerName(firstName);
+	}
 	
 }

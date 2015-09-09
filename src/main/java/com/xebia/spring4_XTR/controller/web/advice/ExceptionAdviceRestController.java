@@ -1,4 +1,4 @@
-package com.xebia.spring4_XTR.controller.web.rest_controller_annotation.new_way;
+package com.xebia.spring4_XTR.controller.web.advice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,10 +12,10 @@ import com.xebia.spring4_XTR.exception.CustomerException;
 import com.xebia.spring4_XTR.model.Customer;
 import com.xebia.spring4_XTR.service.CustomerService;
 
-// call with http://localhost:9090/api/webrestcontroller?customerId=5590e16144ae3e640e1950da
+// call with http://localhost:9090/api/exceptionAdviceRestcontroller/5590e16144ae3e640e1950da
 @RestController
-@RequestMapping("/api/webrestcontroller")
-public class WebRestController{
+@RequestMapping("/api/exceptionAdviceRestcontroller")
+public class ExceptionAdviceRestController{
 
 	@Autowired
 	private CustomerService customerService;
@@ -31,7 +31,4 @@ public class WebRestController{
     public <T> ResponseEntity<T>  getCustomer(String customerId) throws CustomerException {
 		throw new IllegalArgumentException("[API] Getting exception problem.");
     }
-	
-   
-	
 }

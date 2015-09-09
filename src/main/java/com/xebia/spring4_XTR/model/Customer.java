@@ -9,22 +9,29 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Document(collection = "customer")
 public class Customer implements Serializable{
 
 	private static final long serialVersionUID = -7531225083160938540L;
-
+	@JsonView(View.Summary.class)
 	@Id
 	@Field("customer_id")
 	private String customerId;
+	@JsonView(View.Summary.class)
 	@Field("first_name")
 	private String firstName;
+	@JsonView(View.Summary.class)
 	@Field("last_name")
 	private String lastName;
+	@JsonView(View.Summary.class)
 	@Field("created_on")
 	private Date createdOn;
+	
 	@Field("modified_on")
 	private Date modifiedOn;
+	
 	@Field("customer_orders")
 	private List<String> orders =  new ArrayList<String>();
 	

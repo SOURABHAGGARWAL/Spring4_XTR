@@ -21,4 +21,7 @@ public interface CustomerService {
     public List<Order> getCustomerOrders(String customerId) throws OrderException, CustomerException;
 
 	public Optional<Customer> findByCustomerID(String customerId);
+	
+
+	public List<Customer> findByCustomerName(String firstName);
 }

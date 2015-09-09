@@ -1,6 +1,7 @@
 package com.xebia.spring4_XTR.business.impl;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,4 +52,10 @@ public class CustomerBusinessImpl implements CustomerBusiness {
 		return customerRepository.findByCustomerID(customerId);
 	}
 	
+	@Override
+	public List<Customer> findByCustomerName(String firstName) {
+		List<Customer> customers = customerRepository.findByCustomerName(firstName);
+		System.out.println(customers);
+		return customers;
+	}
 }
